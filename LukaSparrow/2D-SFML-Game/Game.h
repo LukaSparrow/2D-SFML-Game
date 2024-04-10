@@ -1,11 +1,10 @@
 #pragma once
 
-#include"State.h"
+#include"GameState.h"
 
 class Game
 {
 private:
-
 	// Variables
 	sf::RenderWindow* window;
 	sf::Event sfEvent;
@@ -13,8 +12,11 @@ private:
 	sf::Clock dtClock;
 	float dt;
 
+	std::stack<State*> states;
+
 	// Initialization
 	void initWindow();
+	void initStates();
 
 public:
 	// Constructors / Destructors
@@ -22,9 +24,19 @@ public:
 	virtual ~Game();
 
 	// Functions
+	
+	// Other
+	void endApplication();
+
+
+	// Update
 	void updateDt();
 	void updateSFMLEvents();
 	void update();
+
+	// Render
 	void render();
+
+	// Core
 	void run();
 };
