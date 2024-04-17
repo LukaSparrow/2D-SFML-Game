@@ -1,26 +1,2 @@
-﻿  Button.cpp
-  Game.cpp
-  GameState.cpp
-  main.cpp
-  MainMenuState.cpp
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:         with
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:         [
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:             T=unsigned int
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:         ]
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:         and
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:         [
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:             T=float
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,78): warning C4244:         ]
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244: "argument": konwersja z "T" do "T", możliwa utrata danych
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:         with
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:         [
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:             T=unsigned int
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:         ]
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:         and
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:         [
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:             T=float
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp(24,57): warning C4244:         ]
-  State.cpp
-  Generowanie kodu...
+﻿  MainMenuState.cpp
   2D-SFML-Game.vcxproj -> C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\2D-SFML-Game.exe
