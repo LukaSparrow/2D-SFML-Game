@@ -77,6 +77,7 @@ private:
 	sf::Sprite& sprite;
 	sf::Texture& textureSheet;
 	std::map<std::string, Animation*> animations;
+	Animation* lastAnimation;
 
 public:
 	// Constructors / Destructors
@@ -87,10 +88,6 @@ public:
 	void addAnimation(const std::string key, 
 		float animation_timer, 
 		int start_frame_x, int start_frame_y, int frames_x, int frames_y, int width, int height);
-
-	void startAnimation(const std::string animation);
-	void pauseAnimation(const std::string animation);
-	void resetAnimation(const std::string animation);
 
 	void play(const std::string key, const float& dt);
 };
