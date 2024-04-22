@@ -1,9 +1,12 @@
 #pragma once
-#include "State.h"
+#include"State.h"
+#include"PauseMenu.h"
 
 class GameState : public State
 {
 private:
+	PauseMenu pmenu;
+
 	Player* player;
 
 	// Functions

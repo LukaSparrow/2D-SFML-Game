@@ -8,5 +8,7 @@ C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\HitboxComponent.cpp;C:\Us
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\main.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\main.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\MainMenuState.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MovementComponent.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\MovementComponent.obj
+C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\PauseMenu.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\PauseMenu.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Player.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Player.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\State.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\State.obj
+C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Tile.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Tile.obj

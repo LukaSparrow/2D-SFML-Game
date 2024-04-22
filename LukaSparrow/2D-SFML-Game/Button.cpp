@@ -18,7 +18,7 @@ Button::Button(float x, float y, float width, float height,
 	this->text.setCharacterSize(character_size);
 	this->text.setPosition(
 		this->shape.getPosition().x + (this->shape.getGlobalBounds().width / 2.f) - this->text.getGlobalBounds().width / 2.f,
-		this->shape.getPosition().y + (this->shape.getGlobalBounds().height / 2.f) - this->text.getGlobalBounds().height / 2.f
+		this->shape.getPosition().y + (this->shape.getGlobalBounds().height / 2.f) - this->text.getGlobalBounds().height / 2.f - 0.2f * height
 	);
 
 	this->textIdleColor = text_idle_color;
