@@ -1,5 +1,5 @@
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\AnimationComponent.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\AnimationComponent.obj
-C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Button.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Button.obj
+C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Gui.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Gui.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\EditorState.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\EditorState.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Entity.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Entity.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Game.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Game.obj
@@ -10,5 +10,6 @@ C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MainMenuState.cpp;C:\User
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\MovementComponent.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\MovementComponent.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\PauseMenu.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\PauseMenu.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Player.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Player.obj
+C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\SettingsState.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\SettingsState.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\State.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\State.obj
 C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Tile.cpp;C:\Users\Łukasz\source\repos\LukaSparrow\2D-SFML-Game\Debug\Tile.obj

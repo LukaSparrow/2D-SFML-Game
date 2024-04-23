@@ -1,7 +1,7 @@
 #pragma once
 
-#include "State.h"
-#include "Button.h"
+#include"State.h"
+#include"Gui.h"
 
 class EditorState : public State
 {
@@ -9,7 +9,7 @@ private:
 	// Variables
 	sf::Font font;
 
-	std::map<std::string, Button*> buttons;
+	std::map<std::string, gui::Button*> buttons;
 
 	// Initializers
 	void initVariables();
