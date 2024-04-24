@@ -47,8 +47,8 @@ void GameState::initPlayers()
 }
 
 // Constructors / Destructors
-GameState::GameState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
-	:State(window, supportedKeys, states)
+GameState::GameState(StateData* state_data)
+	:State(state_data)
 {
 	this->initKeybinds();
 	this->initFonts();
@@ -98,6 +98,7 @@ void GameState::updatePauseMenuButtons()
 		this->endState();
 	}
 }
+
 void GameState::update(const float& dt)
 {
 	this->updateMousePositions();
@@ -122,6 +123,8 @@ void GameState::render(sf::RenderTarget* target)
 		{
 			target = this->window;
 		}
+		//this->map.render(*target);
+
 		this->player->render(*target);
 
 		if (this->paused) // Pause menu render

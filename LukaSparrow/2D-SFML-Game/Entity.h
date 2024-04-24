@@ -3,11 +3,14 @@
 #include"MovementComponent.h"
 #include"AnimationComponent.h"
 
+class HitboxComponent;
+class MovementComponent;
+class AnimationComponent;
+
 class Entity
 {
 private:
 	void initVariables();
-
 
 protected:
 	sf::Sprite sprite;

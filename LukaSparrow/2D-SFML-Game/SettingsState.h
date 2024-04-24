@@ -2,6 +2,9 @@
 #include"State.h"
 #include"Gui.h"
 
+class State;
+class Gui;
+
 class SettingsState : public State
 {
 private:
@@ -26,7 +29,7 @@ private:
 	void initText();
 
 public:
-	SettingsState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states);
+	SettingsState(StateData* state_data);
 	virtual ~SettingsState();
 
 	// Accessors
