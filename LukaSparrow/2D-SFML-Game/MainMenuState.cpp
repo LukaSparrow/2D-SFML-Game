@@ -1,4 +1,5 @@
-#include "MainMenuState.h"
+#include"stdafx.h"
+#include"MainMenuState.h"
 
 // Initializers
 void MainMenuState::initVariables()

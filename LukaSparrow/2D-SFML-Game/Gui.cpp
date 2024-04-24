@@ -1,4 +1,5 @@
-#include "Gui.h"
+#include"stdafx.h"
+#include"Gui.h"
 
 gui::Button::Button(float x, float y, float width, float height,
 	sf::Font* font, std::string text, unsigned character_size,
@@ -165,7 +166,13 @@ gui::DropDownList::~DropDownList()
 	}
 }
 
+
 // Accessors
+const unsigned short gui::DropDownList::getActiveElementId() const
+{
+	return this->activeElement->getId();
+}
+
 const bool gui::DropDownList::getKeytime()
 {
 	if (this->keytime >= this->keytimeMax)

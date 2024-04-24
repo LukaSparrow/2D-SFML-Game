@@ -1,4 +1,5 @@
-#include "Tile.h"
+#include"stdafx.h"
+#include"Tile.h"
 
 Tile::Tile()
 {

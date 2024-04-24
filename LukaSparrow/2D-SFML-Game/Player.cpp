@@ -1,4 +1,5 @@
-#include "Player.h"
+#include"stdafx.h"
+#include"Player.h"
 
 // Initializers
 void Player::initVariables()

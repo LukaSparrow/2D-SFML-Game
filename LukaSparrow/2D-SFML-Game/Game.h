@@ -35,7 +35,6 @@ public:
 	// Other
 	void endApplication();
 
-
 	// Update
 	void updateDt();
 	void updateSFMLEvents();

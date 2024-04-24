@@ -1,7 +1,7 @@
 #pragma once
-#include "HitboxComponent.h"
-#include "MovementComponent.h"
-#include "AnimationComponent.h"
+#include"HitboxComponent.h"
+#include"MovementComponent.h"
+#include"AnimationComponent.h"
 
 class Entity
 {

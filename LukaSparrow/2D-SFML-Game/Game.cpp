@@ -1,3 +1,4 @@
+#include"stdafx.h"
 #include"Game.h"
 
 // Static Functions
@@ -23,7 +24,6 @@ void Game::initWindow()
     unsigned framerate_limit = 120;
     bool vertical_sync_enabled = false;
     unsigned antialiasing_level = 0;
-
 
     if (ifs.is_open()) 
     {

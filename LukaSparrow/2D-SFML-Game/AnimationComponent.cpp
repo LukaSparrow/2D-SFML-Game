@@ -1,4 +1,5 @@
-#include "AnimationComponent.h"
+#include"stdafx.h"
+#include"AnimationComponent.h"
 
 AnimationComponent::AnimationComponent(sf::Sprite& sprite, sf::Texture& texture_sheet)
 	: sprite(sprite), textureSheet(texture_sheet), lastAnimation(nullptr), priorityAnimation(nullptr)

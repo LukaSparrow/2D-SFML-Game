@@ -1,9 +1,10 @@
-#include "SettingsState.h"
+#include"stdafx.h"
+#include"SettingsState.h"
 
 // Initializers
 void SettingsState::initVariables()
 {
-
+	this->modes = sf::VideoMode::getFullscreenModes();
 }
 
 void SettingsState::initBackground()
@@ -63,8 +64,26 @@ void SettingsState::initGui()
 		sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
 
-	std::string li[] = { "1920x1080","800x600","640x480"};
-	this->dropDownLists["RESOLUTION"] = new gui::DropDownList(800, 450, 200, 50, font, li, 3);
+	std::vector<std::string> modes_str;
+	for (auto& i : this->modes)
+	{
+		modes_str.push_back(std::to_string(i.width) + 'x' + std::to_string(i.height));
+	}
+
+	this->dropDownLists["RESOLUTION"] = new gui::DropDownList(800, 450, 200, 50, font, modes_str.data(), modes_str.size());
+}
+
+void SettingsState::initText()
+{
+	this->optionsText.setFont(this->font);
+	this->optionsText.setPosition(sf::Vector2f(100.f, 450.f));
+	this->optionsText.setCharacterSize(30);
+	this->optionsText.setFillColor(sf::Color(255, 255, 255, 200));
+
+
+	this->optionsText.setString(
+		"Resolution \n\nFullscreen \n\nVsync \n\nAnitaliasing \n\n"
+	);
 }
 
 SettingsState::SettingsState(sf::RenderWindow* window, std::map<std::string, int>* supportedKeys, std::stack<State*>* states)
@@ -75,6 +94,7 @@ SettingsState::SettingsState(sf::RenderWindow* window, std::map<std::string, int
 	this->initFonts();
 	this->initKeybinds();
 	this->initGui();
+	this->initText();
 }
 
 SettingsState::~SettingsState()
@@ -120,7 +140,8 @@ void SettingsState::updateGui(const float& dt)
 	// Apply selected settings
 	if (this->buttons["APPLY"]->isPressed())
 	{
-		
+		// DEBUG REMOVE
+		this->window->create(this->modes[this->dropDownLists["RESOLUTION"]->getActiveElementId()], "Test", sf::Style::Default);
 	}
 
 	// Dropdown lists
@@ -163,6 +184,8 @@ void SettingsState::render(sf::RenderTarget* target)
 	target->draw(this->background);
 
 	this->renderGui(*target);
+
+	target->draw(this->optionsText);
 
 	// Mouse position for button placement
 	sf::Text mouseText;
