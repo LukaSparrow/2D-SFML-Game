@@ -17,7 +17,7 @@ private:
 	Player* player;
 	sf::Texture texture;
 
-	TileMap map;
+	TileMap* tileMap;
 
 	// Functions
 	void initKeybinds();
@@ -25,6 +25,7 @@ private:
 	void initTextures();
 	void initPauseMenu();
 	void initPlayers();
+	void initTileMap();
 
 public:
 	GameState(StateData* state_data);

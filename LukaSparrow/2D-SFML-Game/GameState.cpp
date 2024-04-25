@@ -46,6 +46,11 @@ void GameState::initPlayers()
 	this->player = new Player(0, 0, this->textures["PLAYER_SHEET"]);
 }
 
+void GameState::initTileMap()
+{
+	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10);
+}
+
 // Constructors / Destructors
 GameState::GameState(StateData* state_data)
 	:State(state_data)
@@ -55,12 +60,14 @@ GameState::GameState(StateData* state_data)
 	this->initTextures();
 	this->initPauseMenu();
 	this->initPlayers();
+	this->initTileMap();
 }
 
 GameState::~GameState()
 {
 	delete this->pmenu;
 	delete this->player;
+	delete this->tileMap;
 }
 
 void GameState::updateInput(const float& dt)
@@ -123,7 +130,7 @@ void GameState::render(sf::RenderTarget* target)
 		{
 			target = this->window;
 		}
-		//this->map.render(*target);
+		//this->tileMap.render(*target);
 
 		this->player->render(*target);
 
