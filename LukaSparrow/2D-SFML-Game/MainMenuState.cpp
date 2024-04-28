@@ -53,22 +53,22 @@ void MainMenuState::initButtons()
 {
 	// do zmiany
 
-	this->buttons["GAME_STATE"] = new gui::Button(200.f, 560.f, 250.f, 50.f,
+	this->buttons["GAME_STATE"] = new gui::Button(200.f, 560.f, 250.f, 65.f,
 		&this->font, "New Game", 50,
 		sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
 
-	this->buttons["SETTINGS_STATE"] = new gui::Button(200.f, 635.f, 250.f, 50.f,
+	this->buttons["SETTINGS_STATE"] = new gui::Button(200.f, 635.f, 250.f, 65.f,
 		&this->font, "Settings", 50,
 		sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
 
-	this->buttons["EDITOR_STATE"] = new gui::Button(200.f, 710.f, 250.f, 50.f,
+	this->buttons["EDITOR_STATE"] = new gui::Button(200.f, 710.f, 250.f, 65.f,
 		&this->font, "Map Editor", 50,
 		sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));
 
-	this->buttons["EXIT_STATE"] = new gui::Button(200.f, 835.f, 250.f, 50.f,
+	this->buttons["EXIT_STATE"] = new gui::Button(200.f, 835.f, 250.f, 65.f,
 		&this->font, "Quit", 50,
 		sf::Color(100, 100, 100, 200), sf::Color(250, 250, 250, 250), sf::Color(20, 20, 20, 50),
 		sf::Color(100, 100, 100, 0), sf::Color(150, 150, 150, 0), sf::Color(20, 20, 20, 0));

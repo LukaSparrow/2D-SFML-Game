@@ -28,6 +28,9 @@ private:
 
 	gui::TextureSelector* textureSelector;
 
+	bool collision;
+	short type;
+
 	// Initializers
 	void initVariables();
 	void initBackground();

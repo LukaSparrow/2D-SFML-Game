@@ -5,6 +5,8 @@
 void EditorState::initVariables()
 {
 	this->textureRect = sf::IntRect(0, 0, static_cast<int>(this->stateData->gridSize), static_cast<int>(this->stateData->gridSize));
+	this->collision = false;
+	this->type = TileTypes::DEFAULT;
 }
 
 void EditorState::initBackground()
@@ -50,6 +52,8 @@ void EditorState::initPauseMenu()
 	this->pmenu = new PauseMenu(*this->window, this->font);
 
 	this->pmenu->addButton("QUIT", 800.f, "Quit");
+	this->pmenu->addButton("SAVE", 500.f, "Save");
+	this->pmenu->addButton("LOAD", 400.f, "Load");
 }
 
 void EditorState::initButtons()
@@ -81,7 +85,7 @@ void EditorState::initGui()
 
 void EditorState::initTileMap()
 {
-	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10);
+	this->tileMap = new TileMap(this->stateData->gridSize, 10, 10, "Resources/Images/Tiles/tilesheet1.png");
 }
 
 EditorState::EditorState(StateData* state_data)
@@ -139,7 +143,7 @@ void EditorState::updateEditorInput(const float& dt)
 		{
 			if (!this->textureSelector->getActive())
 			{
-				this->tileMap->addTile(this->mousePosGrid.x, this->mousePosGrid.y, 0, this->textureRect);
+				this->tileMap->addTile(this->mousePosGrid.x, this->mousePosGrid.y, 0, this->textureRect, this->collision, this->type);
 			}
 			else
 			{
@@ -157,6 +161,25 @@ void EditorState::updateEditorInput(const float& dt)
 				this->tileMap->removeTile(this->mousePosGrid.x, this->mousePosGrid.y, 0);
 			}
 		}
+	}
+
+	// Toggle collision
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("TOGGLE_COLLISION"))) && this->getKeytime())
+	{
+		if (this->collision)
+			this->collision = false;
+		else
+			this->collision = true;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("INCREASE_TYPE"))) && this->getKeytime())
+	{
+		// Limit the max type later
+		++this->type;
+	}
+	else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("DECREASE_TYPE"))) && this->getKeytime())
+	{
+		if(this->type > 0)
+			--this->type;
 	}
 }
 
@@ -183,7 +206,9 @@ void EditorState::updateGui(const float& dt)
 	std::stringstream ss;
 	ss << this->mousePosView.x << " " << this->mousePosView.y << 
 		std::endl << this->mousePosGrid.x << " " << this->mousePosGrid.y << 
-		std::endl << this->textureRect.left << " " << this->textureRect.top;
+		std::endl << this->textureRect.left << " " << this->textureRect.top <<
+		std::endl << "Collision: " << this->collision <<
+		std::endl << "Type: " << this->type;
 	this->cursorText.setString(ss.str());
 }
 
@@ -192,6 +217,14 @@ void EditorState::updatePauseMenuButtons()
 	if (this->pmenu->isButtonPressed("QUIT"))
 	{
 		this->endState();
+	}
+	if (this->pmenu->isButtonPressed("SAVE"))
+	{
+		this->tileMap->saveToFile("test.mp");
+	}
+	if (this->pmenu->isButtonPressed("LOAD"))
+	{
+		this->tileMap->loadFromFile("test.mp");
 	}
 }
 

@@ -141,4 +141,9 @@
       <Filter>Pliki zasobów</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="test.mp">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+  </ItemGroup>
 </Project>
