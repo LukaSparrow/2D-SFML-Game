@@ -1,6 +1,23 @@
 #include"stdafx.h"
 #include"GameState.h"
 
+void GameState::initDeferredRender()
+{
+	this->renderTexture.create(
+		this->stateData->gfxSettings->resolution.width,
+		this->stateData->gfxSettings->resolution.height
+	);
+
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	this->renderSprite.setTextureRect(
+		sf::IntRect(
+			0, 0,
+			this->stateData->gfxSettings->resolution.width,
+			this->stateData->gfxSettings->resolution.height
+		)
+	);
+}
+
 // Initializers
 void GameState::initView()
 {
@@ -73,6 +90,7 @@ void GameState::initTileMap()
 GameState::GameState(StateData* state_data)
 	:State(state_data)
 {
+	this->initDeferredRender();
 	this->initView();
 	this->initKeybinds();
 	this->initFonts();
@@ -154,18 +172,25 @@ void GameState::update(const float& dt)
 
 void GameState::render(sf::RenderTarget* target)
 {	
-		if (!target)
-		{
-			target = this->window;
-		}
-		target->setView(this->view);
-		this->tileMap->render(*target);
+	if (!target)
+	{
+		target = this->window;
+	}
+	this->renderTexture.clear();
 
-		this->player->render(*target);
+	this->renderTexture.setView(this->view);
+	this->tileMap->render(this->renderTexture);
 
-		if (this->paused) // Pause menu render
-		{
-			target->setView(this->window->getDefaultView());
-			this->pmenu->render(*target);
-		}
+	this->player->render(this->renderTexture);
+
+	if (this->paused) // Pause menu render
+	{
+		this->renderTexture.setView(this->renderTexture.getDefaultView());
+		this->pmenu->render(this->renderTexture);
+	}
+
+	// FINAL RENDER
+	this->renderTexture.display();
+	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	target->draw(this->renderSprite);
 }
