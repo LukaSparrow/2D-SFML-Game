@@ -48,6 +48,11 @@ TileMap::TileMap(float gridSize, unsigned width, unsigned height, std::string te
 	{
 		std::cout << "ERROR::TILEMAP::FAILED TO LOAD TILETEXTURESHEET::FILENAME: " << texture_file << std::endl;
 	}
+
+	this->collisionBox.setSize(sf::Vector2f(gridSizeF, gridSizeF));
+	this->collisionBox.setFillColor(sf::Color(255, 0, 0, 50));
+	this->collisionBox.setOutlineColor(sf::Color::Red);
+	this->collisionBox.setOutlineThickness(1.f);
 }
 
 TileMap::~TileMap()
@@ -215,12 +220,17 @@ void TileMap::loadFromFile(const std::string file_name)
 	in_file.close();
 }
 
+void TileMap::updateCollision(Entity* entity)
+{
+
+}
+
 void TileMap::update()
 {
 
 }
 
-void TileMap::render(sf::RenderTarget& target)
+void TileMap::render(sf::RenderTarget& target, Entity* entity)
 {
 	for (auto &x : this->map)
 	{
@@ -231,6 +241,11 @@ void TileMap::render(sf::RenderTarget& target)
 				if(z != nullptr)
 				{
 					z->render(target);
+					if(z->getCollision())
+					{
+						this->collisionBox.setPosition(z->getPosition());
+						target.draw(this->collisionBox);
+					}
 				}
 			}
 		}
