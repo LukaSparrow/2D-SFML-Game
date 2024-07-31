@@ -13,7 +13,8 @@ private:
 
 	unsigned gridSizeU;
 	float gridSizeF;
-	sf::Vector2u maxSize;
+	sf::Vector2u maxSizeWorldGrid;
+	sf::Vector2f maxSizeWorldF;
 	unsigned layers;
 	std::vector< std::vector< std::vector< Tile* > > > map;
 	std::string textureFile;
