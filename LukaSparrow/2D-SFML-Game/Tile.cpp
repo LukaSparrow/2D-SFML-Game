@@ -7,7 +7,7 @@ Tile::Tile()
 	this->type = 0;
 }
 
-Tile::Tile(unsigned grid_x, unsigned grid_y, float gridSizeF, const sf::Texture& texture, const sf::IntRect& texture_rect, bool collision, short type)
+Tile::Tile(int grid_x, int grid_y, float gridSizeF, const sf::Texture& texture, const sf::IntRect& texture_rect, bool collision, short type)
 {
 	this->shape.setSize(sf::Vector2f(gridSizeF, gridSizeF));
 	this->shape.setFillColor(sf::Color::White);
@@ -30,6 +30,11 @@ Tile::~Tile()
 const sf::Vector2f& Tile::getPosition() const
 {
 	return this->shape.getPosition();
+}
+
+const sf::FloatRect Tile::getGlobalBounds() const
+{
+	return this->shape.getGlobalBounds();
 }
 
 
