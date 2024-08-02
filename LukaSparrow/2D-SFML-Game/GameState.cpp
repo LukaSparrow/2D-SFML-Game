@@ -80,6 +80,11 @@ void GameState::initPlayers()
 	this->player = new Player(0, 0, this->textures["PLAYER_SHEET"]);
 }
 
+void GameState::initPlayerGui()
+{
+	this->playerGui = new PlayerGui(this->player);
+}
+
 void GameState::initTileMap()
 {
 	this->tileMap = new TileMap(this->stateData->gridSize, 100, 100, "Resources/Images/Tiles/tilesheet1.png");
@@ -97,6 +102,7 @@ GameState::GameState(StateData* state_data)
 	this->initTextures();
 	this->initPauseMenu();
 	this->initPlayers();
+	this->initPlayerGui();
 	this->initTileMap();
 }
 
@@ -105,6 +111,7 @@ GameState::~GameState()
 	delete this->pmenu;
 	delete this->player;
 	delete this->tileMap;
+	delete this->playerGui;
 }
 
 // Functions
@@ -132,13 +139,30 @@ void GameState::updatePlayerInput(const float& dt)
 {
 	// Update player input
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_LEFT"))))
+	{
 		this->player->move(-1.f, 0.f, dt);
+	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_RIGHT"))))
+	{
 		this->player->move(1.f, 0.f, dt);
+	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_UP"))))
+	{
 		this->player->move(0.f, -1.f, dt);
+		if (this->getKeytime())
+			this->player->gainEXP(4);
+	}
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Key(this->keybinds.at("MOVE_DOWN"))))
+	{
 		this->player->move(0.f, 1.f, dt);
+		if (this->getKeytime())
+			this->player->loseEXP(4);
+	}
+}
+
+void GameState::updatePlayerGui(const float& dt)
+{
+	this->playerGui->update(dt);
 }
 
 void GameState::updatePauseMenuButtons()
@@ -170,6 +194,8 @@ void GameState::update(const float& dt)
 		this->updateTileMap(dt);
 
 		this->player->update(dt);
+
+		this->playerGui->update(dt);
 	}
 	else // Paused update
 	{
@@ -193,14 +219,18 @@ void GameState::render(sf::RenderTarget* target)
 
 	this->tileMap->renderDeffered(this->renderTexture);
 
+	// Render GUI
+	this->renderTexture.setView(this->renderTexture.getDefaultView());
+	this->playerGui->render(this->renderTexture);
+
 	if (this->paused) // Pause menu render
 	{
-		this->renderTexture.setView(this->renderTexture.getDefaultView());
+		//this->renderTexture.setView(this->renderTexture.getDefaultView());
 		this->pmenu->render(this->renderTexture);
 	}
 
 	// FINAL RENDER
 	this->renderTexture.display();
-	this->renderSprite.setTexture(this->renderTexture.getTexture());
+	//this->renderSprite.setTexture(this->renderTexture.getTexture());
 	target->draw(this->renderSprite);
 }

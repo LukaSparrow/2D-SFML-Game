@@ -84,11 +84,14 @@
     <ClCompile Include="GraphicsSettings.cpp">
       <Filter>Pliki zasobów</Filter>
     </ClCompile>
-    <ClCompile Include="Gui.cpp">
-      <Filter>Pliki zasobów</Filter>
-    </ClCompile>
     <ClCompile Include="AttributeComponent.cpp">
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Gui.cpp">
+      <Filter>GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerGui.cpp">
+      <Filter>GUI</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -140,11 +143,14 @@
     <ClInclude Include="GraphicsSettings.h">
       <Filter>Pliki zasobów</Filter>
     </ClInclude>
-    <ClInclude Include="Gui.h">
-      <Filter>Pliki zasobów</Filter>
-    </ClInclude>
     <ClInclude Include="AttributeComponent.h">
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Gui.h">
+      <Filter>GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PlayerGui.h">
+      <Filter>GUI</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
