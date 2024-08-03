@@ -22,11 +22,10 @@ private:
 
 	// Initializers
 	void initVariables();
-	void initBackground();
 	void initFonts();
 	void initKeybinds();
 	void initGui();
-	void initText();
+	void resetGui();
 
 public:
 	SettingsState(StateData* state_data);

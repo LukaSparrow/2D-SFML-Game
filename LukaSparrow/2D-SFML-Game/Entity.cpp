@@ -124,6 +124,6 @@ void Entity::update(const float& dt)
 	
 }
 
-void Entity::render(sf::RenderTarget& target)
+void Entity::render(sf::RenderTarget& target, const bool show_hitbox)
 {
 }

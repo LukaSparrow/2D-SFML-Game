@@ -23,10 +23,10 @@ public:
 	// Functions
 	void loseHP(const int hp);
 	void gainHP(const int hp);
-	void loseEXP(const unsigned exp);
-	void gainEXP(const unsigned exp);
+	void loseEXP(const int exp);
+	void gainEXP(const int exp);
 	void updateAttack();
 	void updateAnimation(const float& dt);
 	void update(const float& dt);
-	void render(sf::RenderTarget& target);
+	void render(sf::RenderTarget& target, const bool show_hitbox = false);
 };

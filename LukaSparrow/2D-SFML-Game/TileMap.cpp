@@ -9,7 +9,7 @@ void TileMap::clear()
 		{
 			for (int z = 0; z < this->layers; z++)
 			{
-				for(int k = 0; k < this->map[x][y][z].size(); k++)
+				for(int k = 0; k < static_cast<int>(this->map[x][y][z].size()); k++)
 				{
 					delete this->map[x][y][z][k];
 					this->map[x][y][z][k] = nullptr;
@@ -80,13 +80,13 @@ const sf::Texture* TileMap::getTileSheet() const
 
 const int TileMap::getLayerSize(const int x, const int y, const int layer) const
 {
-	if(x>=0 && x<this->map.size())
+	if(x >= 0 && x < static_cast<int>(this->map.size()))
 	{
-		if (y >= 0 && y < this->map[x].size())
+		if (y >= 0 && y < static_cast<int>(this->map[x].size()))
 		{
-			if (layer >= 0 && layer < this->map[x][y].size())
+			if (layer >= 0 && layer < static_cast<int>(this->map[x][y].size()))
 			{
-				return this->map[x][y][layer].size();
+				return static_cast<int>(this->map[x][y][layer].size());
 			}
 		}
 	}
@@ -369,7 +369,7 @@ void TileMap::update()
 
 }
 
-void TileMap::render(sf::RenderTarget& target, const sf::Vector2i& gridPosition)
+void TileMap::render(sf::RenderTarget& target, const sf::Vector2i& gridPosition, const bool show_collision)
 {
 	
 	this->layer = 0;
@@ -413,10 +413,13 @@ void TileMap::render(sf::RenderTarget& target, const sf::Vector2i& gridPosition)
 					this->map[x][y][this->layer][k]->render(target);
 				}
 
-				if (this->map[x][y][this->layer][k]->getCollision())
+				if(show_collision)
 				{
-					this->collisionBox.setPosition(this->map[x][y][this->layer][k]->getPosition());
-					target.draw(this->collisionBox);
+					if (this->map[x][y][this->layer][k]->getCollision())
+					{
+						this->collisionBox.setPosition(this->map[x][y][this->layer][k]->getPosition());
+						target.draw(this->collisionBox);
+					}
 				}
 			}
 		}
