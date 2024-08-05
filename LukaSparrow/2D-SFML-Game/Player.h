@@ -8,6 +8,8 @@ class Player : public Entity
 private:
 	// Variables;
 	bool attacking;
+	sf::Sprite weapon_sprite;
+	sf::Texture weapon_texture;
 
 	// Initializers
 	void initVariables();

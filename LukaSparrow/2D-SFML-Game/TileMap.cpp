@@ -369,18 +369,19 @@ void TileMap::update()
 
 }
 
-void TileMap::render(sf::RenderTarget& target, const sf::Vector2i& gridPosition, sf::Shader* shader, sf::Vector2f playerPosition, const bool show_collision)
+void TileMap::render(sf::RenderTarget& target, const sf::Vector2i& gridPosition, sf::Shader* shader, const sf::Vector2f playerPosition, const bool show_collision)
 {
 	
 	this->layer = 0;
 		
-	this->fromX = gridPosition.x - 15;
+	// Visible tiles selection for render
+	this->fromX = gridPosition.x - 16;
 	if (this->fromX < 0)
 		this->fromX = 0;
 	else if (this->fromX > this->maxSizeWorldGrid.x)
 		this->fromX = this->maxSizeWorldGrid.x;
 
-	this->toX = gridPosition.x + 16;
+	this->toX = gridPosition.x + 17;
 	if (this->toX < 0)
 		this->toX = 0;
 	else if (this->toX > this->maxSizeWorldGrid.x)
@@ -398,6 +399,7 @@ void TileMap::render(sf::RenderTarget& target, const sf::Vector2i& gridPosition,
 	else if (this->toY > this->maxSizeWorldGrid.y)
 		this->toY = this->maxSizeWorldGrid.y;
 
+	// Rendering only visible tiles
 	for (int x = this->fromX; x < this->toX; x++)
 	{
 		for (int y = this->fromY; y < this->toY; y++)
