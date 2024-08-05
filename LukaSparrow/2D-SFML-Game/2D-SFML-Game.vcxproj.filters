@@ -157,5 +157,11 @@
     <None Include="test.mp">
       <Filter>Pliki zasobów</Filter>
     </None>
+    <None Include="vertex_shader.vert">
+      <Filter>Pliki zasobów</Filter>
+    </None>
+    <None Include="fragment_shader.frag">
+      <Filter>Pliki zasobów</Filter>
+    </None>
   </ItemGroup>
 </Project>

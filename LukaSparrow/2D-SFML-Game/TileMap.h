@@ -46,6 +46,16 @@ public:
 	void updateCollision(Entity* entity, const float& dt);
 
 	void update();
-	void render(sf::RenderTarget& target, const sf::Vector2i& gridPosition, const bool show_collision = false);
-	void renderDeffered(sf::RenderTarget& target);
+	void render(
+		sf::RenderTarget& target, 
+		const sf::Vector2i& gridPosition, 
+		sf::Shader* shader = nullptr, 
+		const sf::Vector2f playerPosition = sf::Vector2f(), 
+		const bool show_collision = false
+	);
+	void renderDeffered(
+		sf::RenderTarget& target, 
+		sf::Shader* shader = nullptr, 
+		const sf::Vector2f playerPosition = sf::Vector2f()
+	);
 };
