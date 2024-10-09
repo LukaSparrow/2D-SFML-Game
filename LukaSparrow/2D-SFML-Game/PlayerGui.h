@@ -20,6 +20,7 @@ private:
 	sf::Text levelDisplayText;
 	sf::RectangleShape levelDisplayBack;
 
+
 	// EXP Bar
 	std::string expBarString;
 	sf::Text expBarText;
